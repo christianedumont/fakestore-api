@@ -1,0 +1,205 @@
+:root {
+	--bg: #f7f7fb;
+	--card: #fff;
+	--accent: #2b7cff;
+	--muted: #666;
+	--border-color: #dfe7ff;
+	--radius: 0.5rem;
+}
+
+* {
+	box-sizing: border-box
+}
+
+body {
+	background: var(--bg);
+	color: #222;
+}
+
+.container {
+	display: flex;
+	gap: 1rem;
+	padding: 1rem
+}
+
+button {
+	cursor: pointer;
+}
+
+.topbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	background: linear-gradient(90deg, #fff, #f0f4ff);
+	border-bottom: var(--border-color);
+
+	h2 {
+		margin: 0;
+		font-size: 1.1rem
+	}
+}
+
+.controls {
+	display: flex;
+	gap: .5rem;
+	align-items: center;
+
+	input {
+		padding: .4rem .6rem;
+		border-radius: var(--radius);
+		border: 1px solid var(--border-color);
+	}
+}
+
+.list-section {
+	flex: 1
+}
+
+.product-list {
+	padding: 1rem;
+	margin: 0;
+	display: grid;
+	gap: 1rem;
+
+	@media screen and (min-width: 768px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media screen and (min-width: 1200px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.product-card {
+	background: var(--card);
+	padding: 1rem;
+	border-radius: var(--radius);
+	box-shadow: 0 1px 3px rgba(10, 10, 20, .05);
+	display: flex;
+	flex-direction: column;
+	gap: .6rem;
+	min-height: 160px;
+
+	img {
+		height: 100px;
+		object-fit: contain;
+		background: #fff;
+		border-radius: var(--radius);
+		border: 1px solid #eee;
+		padding: 0.5rem;
+	}
+
+	.fa-solid {
+		color: #C00;
+	}
+}
+
+.product-title {
+	font-weight: 600
+}
+
+.product-price {
+	color: var(--accent);
+	font-weight: 700;
+	text-align: right;
+}
+
+.card-actions {
+	display: flex;
+	gap: .5rem;
+	margin-top: auto
+}
+
+#detailModal {
+	img {
+		display: block;
+		margin: 0.5rem auto;
+		max-width: 100%;
+		max-height: 300px;
+		height: auto;
+	}
+}
+
+.close-aside {
+	position: absolute;
+	right: 8px;
+	top: 8px;
+	border: 0;
+	background: transparent;
+	font-size: 1.4rem;
+	cursor: pointer;
+	color: var(--muted)
+}
+
+.message {
+	margin: .4rem 0;
+	color: var(--muted)
+}
+
+/* modal */
+.modal {
+	position: fixed;
+	inset: 0;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	background: rgba(10, 10, 20, .35);
+	z-index: 1000
+}
+
+.modal[aria-hidden="false"] {
+	display: flex
+}
+
+.modal-content {
+	background: var(--card);
+	padding: 1rem;
+	border-radius: var(--radius);
+	min-width: 320px;
+	max-width: 720px;
+}
+
+.modal-close {
+	position: absolute;
+	right: 14px;
+	top: 12px;
+	background: transparent;
+	border: 0;
+	font-size: 1.4rem;
+	cursor: pointer
+}
+
+label {
+	display: block;
+	margin: .5rem 0;
+	font-size: .9rem;
+	color: #333
+}
+
+input[type="text"],
+input[type="number"],
+input[type="url"],
+textarea {
+	width: 100%;
+	padding: .5rem;
+	border-radius: var(--radius);
+	border: 1px solid var(--border-color);
+	margin-top: .2rem
+}
+
+.form-actions {
+	display: flex;
+	gap: .6rem;
+	justify-content: flex-end;
+	margin-top: .8rem
+}
+
+.small {
+	font-size: .85rem;
+	color: var(--muted)
+}
+
+footer {
+	text-align: center;
+}
