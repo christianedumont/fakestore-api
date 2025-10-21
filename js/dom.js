@@ -9,7 +9,7 @@ export function createProductCard(item, wishlist) {
 	article.dataset.id = item.id;
 
 	const img = document.createElement('img');
-	img.src = item.image || 'https://via.placeholder.com/150?text=No+Image';
+	img.src = item.image || 'https://dummyimage.com/150';
 	img.alt = sanitizeString(item.title || 'Produit');
 
 	const title = document.createElement('h2');
